@@ -117,8 +117,6 @@ const CreatePoint = () => {
     async function handleSubmit(event: FormEvent){
         event.preventDefault(); 
 
-        console.log(selectedFile);
-
         const { name, email, whatsapp }  = formData;
         const uf = selectedUf;
         const city = selectedCity;
@@ -140,6 +138,7 @@ const CreatePoint = () => {
         }    
 
         await api.post('points', data);
+        
         alert('ponto de coleta criado')
 
         history.push('/');
